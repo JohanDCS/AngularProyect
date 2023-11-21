@@ -1,0 +1,35 @@
+<div class="container-flex text-center">
+	<div class="row">
+		<h1 class="my-5 text-light font-agbalumo">
+			Bienvenido a nuestro sistema de ventas y asistencias:
+		</h1>
+		<div class="col-12 col-md-5 mx-auto my-5">
+			<!-- Col-12 for small screens, col-md-5 for medium and above -->
+			<img src="./assets/images/logo.svg" alt="logo ia soft" />
+		</div>
+	</div>
+	<div class="row mt-5 p-3 justify-content-center">
+		<div class="col-12 col-md-6 mx-auto my-4 d-flex justify-content-around flex-wrap">
+			<button
+				class="btn btn-primary shadow py-3 px-4 fs-3 font-agbalumo rounded-4 m-2"
+				[routerLink]="['/login-attendance']">
+				<img
+					src="./assets/images/lista-de-verificacion.png"
+					alt="imagen de asistencia"
+					class="me-3 img-fluid"
+					style="max-height: 32px" />
+				Asistencias
+			</button>
+			<button
+				class="btn btn-success shadow py-3 px-4 fs-3 font-agbalumo rounded-4 m-2"
+				[routerLink]="['/login-sales-system']">
+				<img
+					src="./assets/images/sistema-de-ventas.png"
+					alt="imagen de sistema de ventas"
+					class="me-3 img-fluid"
+					style="max-height: 32px" />
+				Sistema de ventas
+			</button>
+		</div>
+	</div>
+</div>

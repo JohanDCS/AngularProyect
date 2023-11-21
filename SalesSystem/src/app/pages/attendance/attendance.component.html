@@ -1,0 +1,52 @@
+<div class="container">
+	<div class="row">
+		<div class="col-12 my-5">
+			<h1 class="my-5 text-light font-agbalumo text-center">
+				Control de asistencia: <br />
+				{{ nowDate }}
+			</h1>
+		</div>
+		<div class="col-md-6 col-12">
+			<div class="card">
+				<div class="card-body">
+					<div class="card-title text-center">
+						<h5>Marcar asistencia</h5>
+					</div>
+					<form [formGroup]="form" (submit)="addDNI()">
+						<div class="input-group my-4">
+							<span class="input-group-text">
+								<i class="bi bi-person-vcard"></i>
+							</span>
+							<input
+								type="text"
+								class="form-control"
+								placeholder="Número de DNI"
+								formControlName="dni"
+								aria-label="Número de DNI" />
+							<button type="submit" class="btn btn-success">Marcar asistencia</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6 col-12">
+			<div
+				class="table-responsive p-5 scrollbar scrollbar-blueJCM bordered-blueJCM bg-light rounded">
+				<table
+					datatable
+					[dtOptions]="dtOptions"
+					class="table table-striped align-middle row-border hover">
+					<tfoot>
+						<tr>
+							<th></th>
+							<th>
+								<input class="form-control" type="text" placeholder="Nombre" />
+							</th>
+							<th></th>
+						</tr>
+					</tfoot>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

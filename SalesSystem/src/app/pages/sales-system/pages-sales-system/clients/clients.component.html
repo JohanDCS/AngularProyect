@@ -1,0 +1,83 @@
+<!-- Button trigger modal -->
+<button
+	type="button"
+	class="btn btn-primary"
+	data-bs-toggle="modal"
+	data-bs-target="#modalCreateClient">
+	Crear <i class="bi bi-plus-circle"></i>
+</button>
+
+<!-- Modal -->
+<div
+	class="modal fade"
+	id="modalCreateClient"
+	tabindex="-1"
+	aria-labelledby="modalClient"
+	aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header bg-primary">
+				<h1 class="modal-title fs-5 text-light" id="modalClient">Crear nuevo cliente</h1>
+				<button
+					type="button"
+					class="btn-close icon"
+					data-bs-dismiss="modal"
+					aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<div class="p-4">
+					<div class="mb-4">
+						<label for="nombre" class="form-label"><b>Nombre:</b></label>
+						<input type="text" class="form-control" id="nombre" placeholder="Nombre" />
+					</div>
+					<div class="mb-4">
+						<label for="dni" class="form-label"><b>DNI:</b></label>
+						<input type="number" class="form-control" id="dni" placeholder="DNI" />
+					</div>
+					<div class="">
+						<label for="celular" class="form-label"><b>N° de telefono:</b></label>
+						<input
+							type="number"
+							class="form-control"
+							id="celular"
+							placeholder="Numero de telefono" />
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+					Close
+				</button>
+				<button type="button" class="btn btn-primary">Guardar</button>
+			</div>
+		</div>
+	</div>
+</div>
+<table
+	datatable
+	[dtOptions]="dtOptions"
+	class="table table-bordered border rounded rounded-4 row-border table-hover">
+	<tfoot>
+		<tr>
+			<th></th>
+			<th>
+				<input class="form-control" type="text" placeholder="code" />
+			</th>
+			<th>
+				<input class="form-control" type="text" placeholder="name" />
+			</th>
+			<th>
+				<input class="form-control" type="text" placeholder="detalles" />
+			</th>
+			<th>
+				<input class="form-control" type="text" placeholder="marca" />
+			</th>
+			<th>
+				<input class="form-control" type="text" placeholder="unit" />
+			</th>
+			<th>
+				<input class="form-control" type="text" placeholder="precio producto" />
+			</th>
+		</tr>
+	</tfoot>
+</table>

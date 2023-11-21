@@ -1,0 +1,33 @@
+/* Fuentes */
+@import url('./assets/css/select2.css');
+@import url('./assets/css/controlColors.css');
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&display=swap');
+
+
+/* You can add global styles to this file, and also import other style files */
+.body-for-selector-login {
+	background: linear-gradient(-50deg, #048650, #36598d);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.font-agbalumo {
+    font-family: 'Agbalumo', sans-serif;
+}
+
+.cursor-pointer{
+    cursor: pointer;
+}

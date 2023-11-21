@@ -1,0 +1,67 @@
+<app-header-sales-system></app-header-sales-system>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-sm-auto bg-light sticky-top border-3 border-end">
+			<app-sidebar-sales-system></app-sidebar-sales-system>
+		</div>
+		<div class="col-sm p-3 min-vh-100">
+			<div class="row">
+				<div
+					class="col-12"
+					[class]="{
+						'col-lg-6': viewShoppingCart === 0,
+						'col-lg-1': viewShoppingCart === 1,
+						'col-lg-9': viewShoppingCart === 2
+					}">
+					<!--contenido-->
+					<router-outlet></router-outlet>
+					<!--/contenido-->
+				</div>
+				<div
+					class="col-12"
+					[class]="{
+						'col-lg-6': viewShoppingCart === 0,
+						'col-lg-11': viewShoppingCart === 1,
+						'col-lg-3': viewShoppingCart === 2
+					}">
+					<div class="row mb-2">
+						<div class="col">
+							<div class="btn-group mx-2" role="group" aria-label="Basic example">
+								<button
+									type="button"
+									class="btn btn-primary"
+									(click)="onClickShowShoppingCart(1)">
+									<i class="bi bi-arrow-bar-left"></i>
+								</button>
+								<button
+									type="button"
+									class="btn btn-primary"
+									(click)="onClickShowShoppingCart(0)">
+									<i class="bi bi-arrow-left-right"></i>
+								</button>
+								<button
+									type="button"
+									class="btn btn-primary"
+									(click)="onClickShowShoppingCart(2)">
+									<i class="bi bi-arrow-bar-right"></i>
+								</button>
+							</div>
+							<div class="btn-group mx-2" role="group" aria-label="Basic example">
+								<button type="button" class="btn btn-primary">
+									Cambiar grupo de precio
+								</button>
+								<button type="button" class="btn btn-primary" (click)="clearCart()">
+									Borrar carrito
+								</button>
+							</div>
+						</div>
+					</div>
+					<!--Cart-->
+					<app-shopping-cart [inputClearCart]="emitClearCart"></app-shopping-cart>
+					<!--/Cart-->
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<app-footer-sales-system></app-footer-sales-system>

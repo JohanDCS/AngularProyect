@@ -1,0 +1,62 @@
+<div class="container vh-100">
+	<div class="row text-center">
+		<h1 class="my-5 text-light font-agbalumo">Bienvenido a nuestro sistema asistencias:</h1>
+		<div class="col-12 col-md-5 mx-auto my-5">
+			<!-- Col-12 for small screens, col-md-5 for medium and above -->
+			<img src="./assets/images/logo.svg" alt="logo ia soft" />
+		</div>
+	</div>
+	<div class="row d-flex align-items-center justify-content-center">
+		<div class="col-4">
+			<div class="card shadow">
+				<div class="card-body">
+					<div class="card-title text-center my-4">
+						<h5>Autentificación</h5>
+					</div>
+					<form [formGroup]="form" (submit)="loginAttendance()">
+						<div class="input-group my-4">
+							<span class="input-group-text" id="basic-addon1">
+								<i class="bi bi-building"></i>
+							</span>
+							<input
+								type="text"
+								class="form-control"
+								placeholder="Ruc de la empresa"
+								formControlName="ruc"
+								aria-label="Ruc de la empresa" />
+						</div>
+						<div class="input-group my-4">
+							<span class="input-group-text" id="basic-addon1">
+								<i class="bi bi-shop"></i>
+							</span>
+							<input
+								[type]="passwordVisible ? 'text' : 'password'"
+								class="form-control"
+								placeholder="Token de acceso para la sede"
+								formControlName="token"
+								aria-label="Token de acceso para la sede" />
+							<button
+								type="button"
+								class="btn btn-outline-secondary"
+								(click)="passwordVisible = !passwordVisible">
+								<i
+									[class]="
+										passwordVisible ? 'bi bi-eye-fill' : 'bi bi-eye-slash-fill'
+									"></i>
+							</button>
+						</div>
+						<div class="text-center">
+							<button
+								type="button"
+								class="btn btn-danger mx-2"
+								[routerLink]="['/pages/selector-login']">
+								Volver
+							</button>
+							<button type="submit" class="btn btn-primary mx-2">Ingresar</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
