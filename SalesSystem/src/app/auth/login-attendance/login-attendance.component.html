@@ -16,14 +16,25 @@
 					<form [formGroup]="form" (submit)="loginAttendance()">
 						<div class="input-group my-4">
 							<span class="input-group-text" id="basic-addon1">
-								<i class="bi bi-building"></i>
+								<i class="bi bi-person-badge"></i>
 							</span>
 							<input
 								type="text"
 								class="form-control"
-								placeholder="Ruc de la empresa"
+								placeholder="DNI del personal"
 								formControlName="ruc"
-								aria-label="Ruc de la empresa" />
+								aria-label="DNI del personal" />
+						</div>
+						<div class="input-group my-4">
+							<span class="input-group-text" id="basic-addon1">
+								<i class="bi bi-key"></i>
+							</span>
+							<input
+								type="password"
+								class="form-control"
+								placeholder="Ingrese su contraseña"
+								formControlName="ruc"
+								aria-label="Ingrese su contraseña" />
 						</div>
 						<div class="input-group my-4">
 							<span class="input-group-text" id="basic-addon1">
