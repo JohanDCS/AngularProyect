@@ -12,6 +12,7 @@ const routes: Routes = [
 		children: [
 			{ path: 'home', component: HomeSalesSystemComponent },
 			{ path: 'clients', component: ClientsComponent },
+			{ path: 'asistencia', component: ClientsComponent}
 		],
 	},
 ];
