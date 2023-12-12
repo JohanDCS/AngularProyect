@@ -1,7 +1,7 @@
 import { Component, Renderer2, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { DataTableDirective } from 'angular-datatables';
+import { DataTableDirective, DataTablesModule } from 'angular-datatables';
 import { jsPDF } from 'jspdf';
 import { Subscription } from 'rxjs';
 import { NotificationService } from 'src/app/services/controller/notification.service';
@@ -12,7 +12,7 @@ import { DataTables_Spanish } from 'src/utils/proyect.utils';
 @Component({
   selector: 'app-asistencia',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, DataTablesModule],
   templateUrl: './asistencia.component.html',
   styleUrl: './asistencia.component.css'
 })
