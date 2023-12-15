@@ -42,7 +42,7 @@ export class AsistenciaComponent {
 			pagingType: 'full_numbers',
 			ajax: (dataTablesParameters: any, callback: DataTables_AjaxCallback) => {
 				this.suscriptionDataTables = this.http
-					.get<DataTablesResponse>(`${environment.API_REST.URL}/producto/load`)
+					.get<DataTablesResponse>(`${environment.API_REST.URL}/asistencia/mostrar/load`)
 					.subscribe((resp) => {
 						console.log(resp);
 						callback({
@@ -101,27 +101,27 @@ export class AsistenciaComponent {
 				},
 				{
 					title: 'Cargo',
-					data: 'Cargo',
+					data: 'control.usuario[].persona.TipoCargo',
 				},
 				{
 					title: 'Nombres',
-					data: 'Nombres',
+					data: 'control.usuario[].persona.Nombres',
 				},
 				{
 					title: 'Apellidos',
-					data: 'Apellidos',
+					data: 'control.usuario[].persona.Apellidos',
 				},
 				{
 					title: 'Hora de Registro',
-					data: 'Hora de Registro',
+					data: 'control.usuario[].persona.',
 				},
 				{
 					title: 'Fecha',
-					data: 'Fecha',
+					data: 'fecha',
 				},
 				{
 					title: 'Estado',
-					data: 'Estado',
+					data: 'state',
 				},
 				{
 					title: 'Acciones',
@@ -139,18 +139,18 @@ export class AsistenciaComponent {
 						colIndex: number,
 					) => {
 						$(cell).on('click', 'a.dataTablever', () => {
-							this.verProducto(cellData);
+							this.verAsistencia(cellData);
 						});
 					},
 				},
 			],
 		};
 	}
-	verProducto(data: any) {
+	verAsistencia(data: any) {
 		console.log('producto: ', data);
 		const spaceTitle = 24;
 		const spaceRigth = 2;
-		const spaceRow = 10;
+		const spaceRow = 20;
 		const doc = new jsPDF({
 			format: [80, 200],
 		});
@@ -159,12 +159,12 @@ export class AsistenciaComponent {
 
 		// Array con la información
 		const infoArray = [
-			`Cargo: ${data.code}`,
+			`Cargo: ${data.CargoDB}`,
 			`Nombres: ${data.name}`,
 			`Apellidos: ${data.details}`,
 			`Hora de Registro: ${data.marca}`,
 			`Fecha: ${data.unit}`,
-			`Precio Producto: ${data.priceProduct}`,
+			`Estado: ${data.priceProduct}`,
 		];
 
 		for (let i = 0; i < infoArray.length; i++) {

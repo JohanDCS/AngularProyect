@@ -40,7 +40,7 @@ export class ClientsComponent implements OnInit {
 			pagingType: 'full_numbers',
 			ajax: (dataTablesParameters: any, callback: DataTables_AjaxCallback) => {
 				this.suscriptionDataTables = this.http
-					.get<DataTablesResponse>(`${environment.API_REST.URL}/producto/load`)
+					.get<DataTablesResponse>(`${environment.API_REST.URL}`)
 					.subscribe((resp) => {
 						console.log(resp);
 						callback({
