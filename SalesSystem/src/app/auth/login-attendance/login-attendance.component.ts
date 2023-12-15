@@ -53,6 +53,7 @@ export class LoginAttendanceComponent implements OnInit, OnDestroy {
 				console.log(value)
 				this.notification.success(value.message);
 				localStorage.setItem('tokenAttendance', value);
+				
 				this.router.navigate(['pages/attendance']);
 			},
 			error: (value) => {
