@@ -3,6 +3,7 @@ import { Component, OnDestroy, OnInit, Renderer2, ViewChild } from '@angular/cor
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DataTableDirective } from 'angular-datatables';
 import { Subscription } from 'rxjs';
+import { AsistenciaService } from 'src/app/services/api/asistencia.service';
 import { AttendanceService } from 'src/app/services/api/attendance.service';
 import { NotificationService } from 'src/app/services/controller/notification.service';
 import { environment } from 'src/environments/environment';
@@ -38,7 +39,7 @@ export class AttendanceComponent implements OnInit, OnDestroy {
 		private http: HttpClient,
 		private notification: NotificationService,
 		private renderer: Renderer2,
-		private attendanceService: AttendanceService,
+		private attendanceService: AsistenciaService,
 	) {}
 	@ViewChild(DataTableDirective, { static: false })
 	private dataTableElement?: DataTableDirective;
@@ -65,9 +66,8 @@ export class AttendanceComponent implements OnInit, OnDestroy {
 					date: new Date(),
 				};
 				this.suscriptionDataTables = this.http
-					.post<DataTablesResponse>(
-						`${environment.API_REST.URL}/attendance/list-datatables-by-date/`,
-						customParameters,
+					.get<DataTablesResponse>(
+						`${environment.API_REST.URL}/asistencia/mostrar/load`,
 					)
 					.subscribe((resp) => {
 						callback({
@@ -141,19 +141,27 @@ export class AttendanceComponent implements OnInit, OnDestroy {
 				},
 				{
 					title: 'Nombre',
-					data: 'name',
+					data: 'control.usuario[].persona.Nombres',
 				},
 				{
-					title: 'Fecha y hora',
-					data: 'date',
+					title: 'Fecha',
+					data: 'fecha',
+				},
+				{
+					title: 'Hora',
+					data: 'hora',
 				},
 			],
 		};
 	}
 	addDNI() {
 		const dni = this.form.get('dni')?.value;
+		const fecha = new Date();
 		if (dni && this.form.valid) {
-			this.attendanceService.markAttendance(dni).subscribe({
+			this.attendanceService.markAttendance({
+				NumDoc: dni,
+				Fecha: fecha,
+			}).subscribe({
 				next: (value) => {
 					this.notification.success(value.message);
 					this.reloadDataTable();

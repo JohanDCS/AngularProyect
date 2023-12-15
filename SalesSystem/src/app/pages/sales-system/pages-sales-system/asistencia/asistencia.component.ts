@@ -113,7 +113,7 @@ export class AsistenciaComponent {
 				},
 				{
 					title: 'Hora de Registro',
-					data: 'control.usuario[].persona.',
+					data: 'hora',
 				},
 				{
 					title: 'Fecha',
@@ -159,12 +159,12 @@ export class AsistenciaComponent {
 
 		// Array con la información
 		const infoArray = [
-			`Cargo: ${data.CargoDB}`,
-			`Nombres: ${data.name}`,
-			`Apellidos: ${data.details}`,
-			`Hora de Registro: ${data.marca}`,
-			`Fecha: ${data.unit}`,
-			`Estado: ${data.priceProduct}`,
+			`Cargo: ${data.control.usuario[0].persona.TipoCargo}`,
+			`Nombres: ${data.control.usuario[0].persona.Nombres}`,
+			`Apellidos: ${data.control.usuario[0].persona.Apellidos}`,
+			`Hora de Registro: ${data.hora}`,
+			`Fecha: ${data.fecha}`,
+			`Estado: ${data.state}`,
 		];
 
 		for (let i = 0; i < infoArray.length; i++) {

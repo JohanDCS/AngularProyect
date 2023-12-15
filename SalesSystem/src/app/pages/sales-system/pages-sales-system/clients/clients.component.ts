@@ -40,7 +40,7 @@ export class ClientsComponent implements OnInit {
 			pagingType: 'full_numbers',
 			ajax: (dataTablesParameters: any, callback: DataTables_AjaxCallback) => {
 				this.suscriptionDataTables = this.http
-					.get<DataTablesResponse>(`${environment.API_REST.URL}`)
+					.get<DataTablesResponse>(`${environment.API_REST.URL}/auth/load`)
 					.subscribe((resp) => {
 						console.log(resp);
 						callback({
@@ -98,28 +98,28 @@ export class ClientsComponent implements OnInit {
 					},
 				},
 				{
-					title: 'code',
-					data: 'code',
+					title: 'Nombres',
+					data: 'persona.Nombres',
 				},
 				{
-					title: 'name',
-					data: 'name',
+					title: 'Apellidos',
+					data: 'persona.Apellidos',
 				},
 				{
-					title: 'detalles',
-					data: 'details',
+					title: 'Tipo de Documento',
+					data: 'persona.TipoDocumento',
 				},
 				{
-					title: 'marca',
-					data: 'marca',
+					title: 'Tipo de cargo',
+					data: 'persona.TipoCargo',
 				},
 				{
-					title: 'unit',
-					data: 'unit',
+					title: 'Tipo de Usuario',
+					data: 'TipoUsuario',
 				},
 				{
-					title: 'precio producto',
-					data: 'priceProduct',
+					title: 'Turno',
+					data: 'persona.turno.denominacion',
 				},
 				{
 					title: 'Acciones',

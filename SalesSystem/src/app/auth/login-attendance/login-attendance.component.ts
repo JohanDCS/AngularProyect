@@ -40,6 +40,7 @@ export class LoginAttendanceComponent implements OnInit, OnDestroy {
 	}
 	passwordVisible: Boolean = false;
 	loginAttendance() {
+		console.log(this.form.value)
 		const dni = this.form.get('dni')?.value;
 		const password = this.form.get('password')?.value;
 		const token = this.form.get('token')?.value;
