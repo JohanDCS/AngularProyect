@@ -16,13 +16,24 @@
 					<form [formGroup]="form" (submit)="loginAttendance()">
 						<div class="input-group my-4">
 							<span class="input-group-text" id="basic-addon1">
+								<i class="bi bi-shop"></i>
+							</span>
+							<input
+								type="text"
+								class="form-control"
+								placeholder="Token de acceso para la sede"
+								formControlName="token"
+								aria-label="Token de acceso para la sede" />
+						</div>
+						<div class="input-group my-4">
+							<span class="input-group-text" id="basic-addon1">
 								<i class="bi bi-person-badge"></i>
 							</span>
 							<input
 								type="text"
 								class="form-control"
 								placeholder="DNI del personal"
-								formControlName="ruc"
+								formControlName="dni"
 								aria-label="DNI del personal" />
 						</div>
 						<div class="input-group my-4">
@@ -30,22 +41,11 @@
 								<i class="bi bi-key"></i>
 							</span>
 							<input
-								type="password"
-								class="form-control"
-								placeholder="Ingrese su contraseña"
-								formControlName="ruc"
-								aria-label="Ingrese su contraseña" />
-						</div>
-						<div class="input-group my-4">
-							<span class="input-group-text" id="basic-addon1">
-								<i class="bi bi-shop"></i>
-							</span>
-							<input
 								[type]="passwordVisible ? 'text' : 'password'"
 								class="form-control"
-								placeholder="Token de acceso para la sede"
-								formControlName="token"
-								aria-label="Token de acceso para la sede" />
+								placeholder="Ingrese su contraseña"
+								formControlName="password"
+								aria-label="Ingrese su contraseña" />
 							<button
 								type="button"
 								class="btn btn-outline-secondary"

@@ -4,9 +4,10 @@ import { LoginSalesSystemComponent } from './login-sales-system/login-sales-syst
 import { LoginAttendanceComponent } from './login-attendance/login-attendance.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { RegisterAttendanceComponent } from './register-attendance/register-attendance.component';
 
 @NgModule({
-	declarations: [LoginSalesSystemComponent, LoginAttendanceComponent],
+	declarations: [LoginSalesSystemComponent, LoginAttendanceComponent, RegisterAttendanceComponent],
 	imports: [CommonModule, ReactiveFormsModule, RouterModule],
 })
 export class AuthModule {}

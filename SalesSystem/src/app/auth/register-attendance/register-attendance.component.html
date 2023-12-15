@@ -1,0 +1,126 @@
+<div class="container vh-100">
+	<div class="row text-center">
+		<h1 class="my-5 text-light font-agbalumo">Bienvenido a nuestro sistema asistencias:</h1>
+		<div class="col-12 col-md-5 mx-auto my-5">
+			<!-- Col-12 for small screens, col-md-5 for medium and above -->
+			<img src="./assets/images/logo.svg" alt="logo ia soft"/>
+		</div>
+	</div>
+	<div class="row d-flex align-items-center justify-content-center">
+		<div class="col-4">
+			<div class="card shadow">
+				<div class="card-body">
+					<div class="card-title text-center my-4">
+						<h5>REGISTRO DE USUARIO</h5>
+					</div>
+					<form [formGroup]="form" (submit)="registerAttendance()">
+						<div class="input-group my-4">
+							<span class="input-group-text" id="basic-addon1">
+								<i class="bi bi-person-badge"></i>
+							</span>
+							<input
+								type="text"
+								class="form-control"
+								placeholder="Nombres"
+								formControlName="nombres"
+								aria-label="Nombres" />
+						</div>
+						<div class="input-group my-4">
+							<span class="input-group-text" id="basic-addon1">
+								<i class="bi bi-person-badge"></i>
+							</span>
+							<input
+								type="text"
+								class="form-control"
+								placeholder="Apellidos"
+								formControlName="apellidos"
+								aria-label="Apellidos" />
+						</div>
+						<div class="input-group my-4">
+							<span class="input-group-text" id="basic-addon1">
+								<i class="bi bi-person-badge"></i>
+							</span>
+							<select class="form-select" aria-label="Default select example" formControlName="TipoDocIdentidad">
+								<option selected>Seleccione su tipo de documento</option>
+								<option value="dni">DNI</option>
+								<option value="carnet extranjeria">Carnet de extranjeria</option>
+							</select>
+						</div>
+						<div class="input-group my-4">
+							<span class="input-group-text" id="basic-addon1">
+								<i class="bi bi-person-badge"></i>
+							</span>
+							<input
+								type="text"
+								class="form-control"
+								placeholder="Num documento del personal"
+								formControlName="dni"
+								aria-label="Num documento del personal" />
+						</div>
+						<div class="input-group my-4">
+							<span class="input-group-text" id="basic-addon1">
+								<i class="bi bi-key"></i>
+							</span>
+							<input
+								[type]="passwordVisible ? 'text' : 'password'"
+								class="form-control"
+								placeholder="Ingrese su contraseña"
+								formControlName="password"
+								aria-label="Ingrese su contraseña" />
+							<button
+								type="button"
+								class="btn btn-outline-secondary"
+								(click)="passwordVisible = !passwordVisible">
+								<i
+									[class]="
+										passwordVisible ? 'bi bi-eye-fill' : 'bi bi-eye-slash-fill'
+									"></i>
+							</button>
+						</div>
+						<div class="input-group my-4">
+							<span class="input-group-text" id="basic-addon1">
+								<i class="bi bi-person-badge"></i>
+							</span>
+							<select class="form-select" aria-label="Default select example" formControlName="TipoCargo">
+								<option selected>Seleccione su cargo en la empresa</option>
+								<option value="vendedor">vendedor</option>
+								<option value="Administrador de Ventas">Administrador de Ventas</option>
+								<option value="Caja">Caja</option>
+								<option value="Almacenero">Almacenero</option>
+							</select>
+						</div>
+						<div class="input-group my-4">
+							<span class="input-group-text" id="basic-addon1">
+								<i class="bi bi-person-badge"></i>
+							</span>
+							<select class="form-select" aria-label="Default select example" formControlName="turno">
+								<option selected>Seleccione su turno de trabajo</option>
+								<option [ngValue]="1">Mañana 9:00 am a 6:00 pm</option>
+								<option [ngValue]="2">Tarde 5:00 pm a 9:00 pm</option>
+							</select>
+						</div>
+						<div class="input-group my-4">
+							<span class="input-group-text" id="basic-addon1">
+								<i class="bi bi-person-badge"></i>
+							</span>
+							<select class="form-select" aria-label="Default select example" formControlName="TipoUsuario">
+								<option selected>Seleccione su tipo de usuario</option>
+								<option value="Usuario">Usuario</option>
+								<option value="Administrador">Administrador</option>
+							</select>
+						</div>
+						<div class="text-center">
+							<button
+								type="button"
+								class="btn btn-danger mx-2"
+								[routerLink]="['/pages/selector-login']">
+								Volver
+							</button>
+							<button type="submit" class="btn btn-primary mx-2">Ingresar</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
