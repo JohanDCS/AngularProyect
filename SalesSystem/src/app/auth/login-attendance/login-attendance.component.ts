@@ -25,6 +25,8 @@ export class LoginAttendanceComponent implements OnInit, OnDestroy {
 			[Validators.required],
 		],
 	});
+	userInfo: any
+
 	constructor(
 		private renderer: Renderer2,
 		private formGroup: FormBuilder,
@@ -34,6 +36,7 @@ export class LoginAttendanceComponent implements OnInit, OnDestroy {
 	) {}
 	ngOnInit(): void {
 		this.renderer.addClass(document.body, 'body-for-selector-login');
+		
 	}
 	ngOnDestroy(): void {
 		this.renderer.removeClass(document.body, 'body-for-selector-login');
@@ -50,15 +53,27 @@ export class LoginAttendanceComponent implements OnInit, OnDestroy {
 			NumDoc: dni
 		}).subscribe({
 			next: (value) => {
-				console.log(value)
 				this.notification.success(value.message);
-				localStorage.setItem('tokenAttendance', value);
-				
-				this.router.navigate(['pages/attendance']);
+				localStorage.setItem('tokenAttendance', value.token);
+				const datos = this.authService.getUserInfo();
+				const userInfo = JSON.parse(datos.userData);
+				console.log(userInfo)
+				if(userInfo.tipoUsuario === "Administador"){
+					this.router.navigate(['sales-system/users']);
+				}else{
+					this.router.navigate(['pages/attendance']);
+				}
 			},
 			error: (value) => {
 				this.notification.errorEvent(value);
 			},
 		});
+	}
+
+	loadUserInfo(): void {
+		const datos = this.authService.getUserInfo();
+		const userInfo = JSON.parse(datos.userData);
+
+		return userInfo
 	}
 }

@@ -3,8 +3,8 @@
 		class="nav nav-pills nav-flush flex-sm-column flex-row flex-nowrap mb-auto mx-auto text-center justify-content-between w-100 px-3 align-items-center">
 		<li>
 			<a
-				href="#"
-				class="nav-link py-3 px-2"
+				[routerLink]="['./asistencia']"
+				class="nav-link py-3 px-2 pointer"
 				title=""
 				data-bs-toggle="tooltip"
 				data-bs-placement="right"
@@ -14,23 +14,24 @@
 		</li>
 		<li>
 			<a
-				href=""
+				[routerLink]="['./users']"
 				class="nav-link py-3 px-2"
 				title=""
 				data-bs-toggle="tooltip"
 				data-bs-placement="right"
 				data-bs-original-title="Orders">
-				<i class="bi bi-file-earmark-person-fill fs-1" (click)="openModal()"></i>
+				<i class="bi bi-file-earmark-person-fill fs-1"></i>
 			</a>
 		</li>
 		<li>
 			<a
-				href="#"
+				[routerLink]="['/pages/attendance']"
 				class="nav-link py-3 px-2"
 				title=""
 				data-bs-toggle="tooltip"
 				data-bs-placement="right"
-				data-bs-original-title="Products">
+				data-bs-original-title="Products"
+				routerLink="/sales-system/home">
 				<i class="bi bi-calendar-week fs-1"></i>
 			</a>
 		</li>

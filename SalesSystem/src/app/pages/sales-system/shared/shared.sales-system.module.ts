@@ -4,6 +4,7 @@ import { HeaderSalesSystemComponent } from './header-sales-system/header-sales-s
 import { FooterSalesSystemComponent } from './footer-sales-system/footer-sales-system.component';
 import { SidebarSalesSystemComponent } from './sidebar-sales-system/sidebar-sales-system.component';
 import { Select2Module } from 'ng-select2-component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -12,11 +13,12 @@ import { Select2Module } from 'ng-select2-component';
 		FooterSalesSystemComponent,
 		SidebarSalesSystemComponent,
 	],
-	imports: [CommonModule, Select2Module],
+	imports: [CommonModule, Select2Module, RouterModule],
 	exports: [
 		HeaderSalesSystemComponent,
 		FooterSalesSystemComponent,
 		SidebarSalesSystemComponent,
+		RouterModule
 	],
 })
 export class SharedSalesSystemModule {}

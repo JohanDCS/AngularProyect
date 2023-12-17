@@ -40,8 +40,8 @@
 							<span class="input-group-text" id="basic-addon1">
 								<i class="bi bi-person-badge"></i>
 							</span>
-							<select class="form-select" aria-label="Default select example" formControlName="TipoDocIdentidad">
-								<option selected>Seleccione su tipo de documento</option>
+							<select class="form-select" aria-label="Default select example"  formControlName="TipoDocIdentidad">
+								<option value='' disabled selected>Seleccione su tipo de documento</option>
 								<option value="dni">DNI</option>
 								<option value="carnet extranjeria">Carnet de extranjeria</option>
 							</select>
@@ -82,7 +82,7 @@
 								<i class="bi bi-person-badge"></i>
 							</span>
 							<select class="form-select" aria-label="Default select example" formControlName="TipoCargo">
-								<option selected>Seleccione su cargo en la empresa</option>
+								<option value='' disabled selected>Seleccione su cargo en la empresa</option>
 								<option value="vendedor">vendedor</option>
 								<option value="Administrador de Ventas">Administrador de Ventas</option>
 								<option value="Caja">Caja</option>
@@ -94,7 +94,7 @@
 								<i class="bi bi-person-badge"></i>
 							</span>
 							<select class="form-select" aria-label="Default select example" formControlName="turno">
-								<option selected>Seleccione su turno de trabajo</option>
+								<option value='' disabled selected>Seleccione su turno de trabajo</option>
 								<option [ngValue]="1">Mañana 9:00 am a 6:00 pm</option>
 								<option [ngValue]="2">Tarde 5:00 pm a 9:00 pm</option>
 							</select>
@@ -104,7 +104,7 @@
 								<i class="bi bi-person-badge"></i>
 							</span>
 							<select class="form-select" aria-label="Default select example" formControlName="TipoUsuario">
-								<option selected>Seleccione su tipo de usuario</option>
+								<option value='' disabled selected>Seleccione su tipo de usuario</option>
 								<option value="Usuario">Usuario</option>
 								<option value="Administrador">Administrador</option>
 							</select>
@@ -116,7 +116,7 @@
 								[routerLink]="['/pages/selector-login']">
 								Volver
 							</button>
-							<button type="submit" class="btn btn-primary mx-2">Ingresar</button>
+							<button type="submit" class="btn btn-primary mx-2">Registrar</button>
 						</div>
 					</form>
 				</div>

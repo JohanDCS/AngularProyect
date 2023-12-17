@@ -34,7 +34,7 @@ export class AuthService {
     return this.http.post(`${this.apiURL}/register`,data);
   }
 
-  public getUserInfo(): any {
+  getUserInfo(): any {
 		const token = localStorage.getItem('tokenAttendance');
 		if (token) {
 			// Decodificar el token para obtener información del usuario
@@ -44,6 +44,10 @@ export class AuthService {
 			return data;
 		}
 		return null;
+	}
+
+  logout(): void {
+		localStorage.clear();
 	}
   
 }

@@ -6,9 +6,10 @@ import { SharedSalesSystemModule } from '../shared/shared.sales-system.module';
 import { RouterModule } from '@angular/router';
 import { DataTablesModule } from 'angular-datatables';
 import { ClientsComponent } from './clients/clients.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
 	declarations: [HomeSalesSystemComponent, PagesSalesSystemComponent, ClientsComponent],
-	imports: [CommonModule, RouterModule, SharedSalesSystemModule, DataTablesModule],
+	imports: [CommonModule, RouterModule, SharedSalesSystemModule, DataTablesModule, ReactiveFormsModule],
 })
 export class SalesSystemModule {}

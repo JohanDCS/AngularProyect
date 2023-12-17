@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 declare var $: any;
 @Component({
 	selector: 'app-sidebar-sales-system',
@@ -6,7 +7,10 @@ declare var $: any;
 	styleUrls: ['./sidebar-sales-system.component.css'],
 })
 export class SidebarSalesSystemComponent {
-	openModal(){
-		$('#miModal').modal('show');
+	
+	constructor(private router: Router){}
+
+	navegar(){
+		this.router.navigate(['sales-system/users']);
 	}
 }

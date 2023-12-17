@@ -11,7 +11,7 @@ const routes: Routes = [
 		path: 'pages',
 		children: [
 			{ path: 'selector-login', component: SelectorLoginComponent },
-			{ path: 'attendance', component: AttendanceComponent },
+			{ path: 'attendance', component: AttendanceComponent, canActivate: [AuthGuard] },
 		],
 	},
 ];

@@ -5,15 +5,16 @@ import { PagesSalesSystemComponent } from './pages.sales-system.component';
 import { HomeSalesSystemComponent } from './home/home.sales-system.component';
 import { ClientsComponent } from './clients/clients.component';
 import { AsistenciaComponent } from './asistencia/asistencia.component';
+import { AuthGuard } from 'src/app/services/guard/auth.guard';
 
 const routes: Routes = [
 	{
 		path: 'sales-system',
 		component: PagesSalesSystemComponent,
 		children: [
-			{ path: 'home', component: HomeSalesSystemComponent },
-			{ path: 'users', component: ClientsComponent },
-			{ path: 'asistencia', component: AsistenciaComponent }
+			{ path: 'home', component: HomeSalesSystemComponent, canActivate: [AuthGuard] },
+			{ path: 'users', component: ClientsComponent, canActivate: [AuthGuard] },
+			{ path: 'asistencia', component: AsistenciaComponent, canActivate: [AuthGuard] }
 		],
 	},
 ];
