@@ -58,7 +58,7 @@ export class LoginAttendanceComponent implements OnInit, OnDestroy {
 				const datos = this.authService.getUserInfo();
 				const userInfo = JSON.parse(datos.userData);
 				console.log(userInfo)
-				if(userInfo.tipoUsuario === "Administador"){
+				if(userInfo.tipoUsuario === "Administrador"){
 					this.router.navigate(['sales-system/users']);
 				}else{
 					this.router.navigate(['pages/attendance']);
