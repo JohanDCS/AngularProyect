@@ -159,26 +159,6 @@ export class ClientsComponent implements OnInit {
 					title: 'Turno',
 					data: 'persona.turno.denominacion',
 				},
-				{
-					title: 'Acciones',
-					data: null,
-					render: (data: any, type: any, full: any) => {
-						return `
-						<div class="table-action"><a class="cursor-pointer dataTablever">ver</a></div>
-					  `;
-					},
-					createdCell: (
-						cell: Node,
-						cellData: any,
-						rowData: any,
-						rowIndex: number,
-						colIndex: number,
-					) => {
-						$(cell).on('click', 'a.dataTablever', () => {
-							this.verProducto(cellData);
-						});
-					},
-				},
 			],
 		};
 	}

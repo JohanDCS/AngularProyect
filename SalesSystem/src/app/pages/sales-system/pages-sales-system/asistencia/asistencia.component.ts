@@ -112,6 +112,10 @@ export class AsistenciaComponent {
 					data: 'control.usuario[].persona.Apellidos',
 				},
 				{
+					title: 'DNI',
+					data: 'control.usuario[].NumDoc',
+				},
+				{
 					title: 'Hora de Registro',
 					data: 'hora',
 				},
@@ -122,26 +126,6 @@ export class AsistenciaComponent {
 				{
 					title: 'Estado',
 					data: 'state',
-				},
-				{
-					title: 'Acciones',
-					data: null,
-					render: (data: any, type: any, full: any) => {
-						return `
-						<div class="table-action"><a class="cursor-pointer dataTablever">ver</a></div>
-					  `;
-					},
-					createdCell: (
-						cell: Node,
-						cellData: any,
-						rowData: any,
-						rowIndex: number,
-						colIndex: number,
-					) => {
-						$(cell).on('click', 'a.dataTablever', () => {
-							this.verAsistencia(cellData);
-						});
-					},
 				},
 			],
 		};

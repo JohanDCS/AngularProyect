@@ -11,23 +11,11 @@
 				aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
-			<a class="navbar-brand d-block d-md-none text-light">Bienvenido al sistema de Asistencia</a>
+			<a class="fs-1 navbar-brand d-block d-md-none text-light">Bienvenido al sistema de Asistencia</a>
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<a class="navbar-brand d-none d-md-block" href="#"><b>Bienvenido al sistema de Asistencia</b></a>
+				<a class="fs-2 navbar-brand d-none d-md-block" href="#"><b>Bienvenido al sistema de Asistencia</b></a>
 				<ul class="navbar-nav mb-2 mb-lg-0 w-100">
 					<li class="nav-item mx-auto w-50">
-						<div class="input-group mb-3">
-							<!-- Asegúrate de que el componente select2 se inicialice correctamente -->
-							<select2
-								class="select2-custom-sale-system w-75"
-								[data]="[{ label: 'hola mundo', value: 'value' }]"
-								placeholder="Ingrese la fecha que desee buscar"
-								aria-label="Ingrese la fecha que desee buscar">
-							</select2>
-							<button class="btn btn-success input-group-text">
-								<i class="bi bi-plus-square"></i>
-							</button>
-						</div>
 					</li>
 				</ul>
 				<ul class="navbar-nav dropdown">
@@ -39,12 +27,12 @@
 						<img
 							src="https://github.com/mdo.png"
 							alt="Perfil de usuario"
-							width="32"
-							height="32"
+							width="70"
+							height="70"
 							class="rounded-circle" />
 					</a>
 					<ul class="dropdown-menu dropdown-menu-end text-small">
-						<li><a class="dropdown-item" (click)="logout()">Sign out</a></li>
+						<li><a class="dropdown-item" (click)="logout()">Cerrar Sesion</a></li>
 					</ul>
 				</ul>
 			</div>
